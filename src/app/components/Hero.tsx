@@ -6,7 +6,7 @@ export function Hero() {
       <div className="max-w-6xl w-full grid md:grid-cols-10 gap-12 items-center">
         <div className="space-y-6 md:col-span-7">
           <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full">
-            <span className="text-blue-400">Full Stack Developer</span>
+            <span className="text-blue-400">Full Stack Web Developer</span>
           </div>
           <h1 className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-7xl">
             José Luis Elizondo
