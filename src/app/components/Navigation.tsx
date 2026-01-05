@@ -88,7 +88,7 @@ export function Navigation() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`block w-full text-left py-2 text-sm transition-all ${
+                className={`block w-full text-center py-2 text-sm transition-all ${
                   activeSection === item.id
                     ? 'text-blue-400'
                     : 'text-gray-400 hover:text-gray-300'
@@ -97,8 +97,10 @@ export function Navigation() {
                 {item.label}
               </button>
             ))}
-            <a href='https://drive.google.com/uc?export=download&id=1Z7kGzd-P6aOLX8f9uoEKPr_cf3lH3cwD' target='_blank' className="cursor-pointer w-full px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300">
-              Download CV
+            <a href='https://drive.google.com/uc?export=download&id=1Z7kGzd-P6aOLX8f9uoEKPr_cf3lH3cwD' target='_blank' className="cursor-pointer w-full px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:from-blue-600 hover:to-purple-600 transition-all duration-300 mt-5 flex items-center justify-center text-center">
+              <span>
+                Download CV
+              </span>
             </a>
           </div>
         )}
