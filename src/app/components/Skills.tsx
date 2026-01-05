@@ -6,10 +6,12 @@ export function Skills() {
     { name: 'HTML / JS / CSS', level: 95 },
     { name: '.NET / C#', level: 85 },
     { name: 'SQL (Server, PostgreSQL)', level: 75 },
-    { name: 'Python (Django)', level: 70 },
+    { name: 'Python (Django, FastAPI)', level: 70 },
     { name: 'Bootstrap', level: 100 },
-    { name: 'Tailwind', level: 70 },
+    { name: 'Tailwind', level: 75 },
     { name: 'Artificial Intelligence', level: 90 },
+    { name: 'AWS', level: 70 },
+    { name: 'Figma', level: 80 },
   ];
 
   const softSkills = [
