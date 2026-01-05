@@ -1,6 +1,7 @@
 import { Mail, MapPin, Send, Linkedin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import { toast } from 'sonner';
 
 export function Contact() {
   // EmailJS initialization
@@ -29,11 +30,22 @@ export function Contact() {
       time: new Date().toLocaleString(),
       message: emailForm.message,
       email: emailForm.email,
-    });
-    setEmailForm({
-      name: '',
-      email: '',
-      message: '',
+    })
+    .then(() => {
+      toast.success('Message Sent!', {
+        description: 'Your message has been sent successfully. I will get back to you soon.',
+      });
+      setEmailForm({
+        name: '',
+        email: '',
+        message: '',
+      });
+    })
+    .catch((error) => {
+      console.error('Error sending email:', error);
+      toast.error('Error sending message', {
+        description: 'There was a problem sending your message. Please try again.',
+      });
     });
   }
 
