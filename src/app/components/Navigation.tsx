@@ -46,7 +46,7 @@ export function Navigation() {
         <div className="flex justify-between items-center">
           <button 
             onClick={() => scrollToSection('about')}
-            className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hover:from-blue-300 hover:to-purple-300 transition-all"
+            className="text-fira-code bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent hover:from-blue-300 hover:to-purple-300 transition-all"
           >
             JLE
           </button>

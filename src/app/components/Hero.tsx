@@ -8,7 +8,7 @@ export function Hero() {
           <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-full">
             <span className="text-blue-400">Full Stack Web Developer</span>
           </div>
-          <h1 className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-7xl">
+          <h1 className="text-fira-code bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent text-7xl">
             José Luis Elizondo
           </h1>
           <p className="text-gray-400 text-lg max-w-xl">
