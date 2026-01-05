@@ -9,7 +9,7 @@ export function Skills() {
     { name: 'Python (Django)', level: 70 },
     { name: 'Bootstrap', level: 100 },
     { name: 'Tailwind', level: 70 },
-    { name: 'AI', level: 90 },
+    { name: 'Artificial Intelligence', level: 90 },
   ];
 
   const softSkills = [
@@ -20,6 +20,8 @@ export function Skills() {
     'Adaptability',
     'Assertiveness',
     'Leadership',
+    'Responsibility',
+    'Learning Disposition',
   ];
 
   return (
@@ -51,6 +53,19 @@ export function Skills() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="w-full space-y-6 my-10">
+          <h3 className="text-purple-400 mb-6">Soft Skills</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {softSkills.map((skill) => (
+                <div 
+                  key={skill}
+                  className="px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-300 hover:border-purple-500/30 transition-all text-center"
+                >
+                  {skill}
+                </div>
+              ))}
+            </div>
         </div>
       </div>
     </section>
