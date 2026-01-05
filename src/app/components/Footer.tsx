@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <h4 className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-              John Doe
+              José Luis Elizondo
             </h4>
             <p className="text-gray-400 text-sm">
               Full Stack Developer passionate about creating innovative web solutions and delivering exceptional user experiences.
@@ -35,7 +35,7 @@ export function Footer() {
             <h4 className="text-gray-300 mb-4">Connect</h4>
             <div className="flex gap-3">
               <a 
-                href="https://github.com" 
+                href="https://github.com/ElizondoStudios" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-800/50 border border-gray-700 rounded-lg hover:border-blue-500/50 hover:bg-gray-800 transition-all"
@@ -44,7 +44,7 @@ export function Footer() {
                 <Github className="w-5 h-5 text-gray-400 hover:text-blue-400 transition-colors" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/jos%C3%A9-luis-elizondo-figueroa-562398231/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 bg-gray-800/50 border border-gray-700 rounded-lg hover:border-blue-500/50 hover:bg-gray-800 transition-all"
@@ -53,20 +53,11 @@ export function Footer() {
                 <Linkedin className="w-5 h-5 text-gray-400 hover:text-blue-400 transition-colors" />
               </a>
               <a 
-                href="mailto:john.doe@email.com" 
+                href="mailto:joseluis.elizondof11@outlook.com" 
                 className="p-2 bg-gray-800/50 border border-gray-700 rounded-lg hover:border-purple-500/50 hover:bg-gray-800 transition-all"
                 aria-label="Email"
               >
                 <Mail className="w-5 h-5 text-gray-400 hover:text-purple-400 transition-colors" />
-              </a>
-              <a 
-                href="https://portfolio.com" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-gray-800/50 border border-gray-700 rounded-lg hover:border-purple-500/50 hover:bg-gray-800 transition-all"
-                aria-label="Portfolio"
-              >
-                <Code className="w-5 h-5 text-gray-400 hover:text-purple-400 transition-colors" />
               </a>
             </div>
           </div>
@@ -74,7 +65,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} John Doe. All rights reserved.
+            © {currentYear} José Luis Elizondo Figueroa. All rights reserved.
           </p>
         </div>
       </div>

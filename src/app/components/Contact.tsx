@@ -57,7 +57,7 @@ export function Contact() {
             <div className="p-6 bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-xl">
               <h4 className="text-gray-300 mb-2">Open to Opportunities</h4>
               <p className="text-gray-400 text-sm">
-                Currently available for freelance projects and full-time positions. Let's build something amazing together!
+                Available for freelance projects and full-time positions. Let's build something amazing together!
               </p>
             </div>
           </div>
