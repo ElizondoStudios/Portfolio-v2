@@ -1,4 +1,4 @@
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Linkedin } from 'lucide-react';
 
 export function Contact() {
   return (
@@ -24,20 +24,20 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Email</p>
-                    <a href="mailto:john.doe@email.com" className="text-gray-300 hover:text-blue-400 transition-colors">
-                      john.doe@email.com
+                    <a href="mailto:joseluis.elizondof11@outlook.com" className="text-gray-300 hover:text-blue-400 transition-colors">
+                      joseluis.elizondof11@outlook.com
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-gray-800/30 border border-gray-700 rounded-lg hover:border-purple-500/30 transition-all">
                   <div className="p-3 bg-purple-500/10 rounded-lg">
-                    <Phone className="w-5 h-5 text-purple-400" />
+                    <Linkedin className="w-5 h-5 text-purple-400" />
                   </div>
                   <div>
-                    <p className="text-gray-400 text-sm">Phone</p>
-                    <a href="tel:+1234567890" className="text-gray-300 hover:text-purple-400 transition-colors">
-                      +1 (234) 567-890
+                    <p className="text-gray-400 text-sm">LinkedIn</p>
+                    <a href="https://linkedin.com/in/jos%C3%A9-luis-elizondo-figueroa-562398231" className="text-gray-300 hover:text-purple-400 transition-colors">
+                      José Luis Elizondo Figueroa
                     </a>
                   </div>
                 </div>
@@ -48,7 +48,7 @@ export function Contact() {
                   </div>
                   <div>
                     <p className="text-gray-400 text-sm">Location</p>
-                    <p className="text-gray-300">San Francisco, CA</p>
+                    <p className="text-gray-300">Aguascalientes, MX.</p>
                   </div>
                 </div>
               </div>
