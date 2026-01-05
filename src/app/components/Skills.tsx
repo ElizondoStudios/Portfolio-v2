@@ -68,7 +68,7 @@ export function Skills() {
               {softSkills.map((skill) => (
                 <div 
                   key={skill}
-                  className="px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-300 hover:border-purple-500/30 transition-all text-center"
+                  className="last:col-span-2 md:last:col-span-1 px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-300 hover:border-purple-500/30 transition-all text-center"
                 >
                   {skill}
                 </div>
@@ -81,7 +81,7 @@ export function Skills() {
               {languages.map((language) => (
                 <div 
                   key={language.name}
-                  className="px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-300 hover:border-purple-500/30 transition-all text-center flex flex-col"
+                  className="last:col-span-2 md:last:col-span-1 px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-300 hover:border-purple-500/30 transition-all text-center flex flex-col"
                 >
                   <span>{language.name}</span>
                   <span className="text-muted-foreground text-sm">{language.level}</span>
