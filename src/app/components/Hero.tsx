@@ -65,7 +65,7 @@ export function Hero() {
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl blur-2xl opacity-20"></div>
             <img 
-              src="src/assets/img/presentation-photo.jpg"
+              src="/presentation-photo.jpg"
               alt="Profile"
               className="relative w-80 h-80 object-cover rounded-2xl border-2 border-gray-700"
             />
