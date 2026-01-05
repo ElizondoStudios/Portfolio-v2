@@ -1,6 +1,42 @@
-import { Mail, MapPin, Phone, Send, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Send, Linkedin } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 
 export function Contact() {
+  // EmailJS initialization
+  useEffect(() => {
+    emailjs.init("YgezbUoP_Om7PvM9u");
+  }, []);
+  // Email form state
+  const [emailForm, setEmailForm] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setEmailForm({
+      ...emailForm,
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  const onSubmitEmailForm = (e: React.FormEvent) => {
+    e.preventDefault();
+    emailjs.send("service_nt7ix0d","template_2g48fsf",{
+      title: `New message from ${emailForm.name}`,
+      name: emailForm.name,
+      time: new Date().toLocaleString(),
+      message: emailForm.message,
+      email: emailForm.email,
+    });
+    setEmailForm({
+      name: '',
+      email: '',
+      message: '',
+    });
+  }
+
   return (
     <section id="contact" className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-5xl w-full">
@@ -64,7 +100,7 @@ export function Contact() {
 
           <div>
             <h3 className="text-purple-400 mb-6">Send a Message</h3>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={onSubmitEmailForm}>
               <div>
                 <label htmlFor="name" className="block text-gray-400 text-sm mb-2">
                   Your Name
@@ -73,7 +109,9 @@ export function Contact() {
                   type="text"
                   id="name"
                   className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500/50 text-gray-300 transition-all"
-                  placeholder="John Smith"
+                  placeholder="John Doe"
+                  value={emailForm.name}
+                  onChange={handleChange}
                 />
               </div>
 
@@ -86,6 +124,8 @@ export function Contact() {
                   id="email"
                   className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500/50 text-gray-300 transition-all"
                   placeholder="john@example.com"
+                  value={emailForm.email}
+                  onChange={handleChange}
                 />
               </div>
 
@@ -98,6 +138,8 @@ export function Contact() {
                   rows={6}
                   className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500/50 text-gray-300 transition-all resize-none"
                   placeholder="Tell me about your project..."
+                  value={emailForm.message}
+                  onChange={handleChange}
                 ></textarea>
               </div>
 
