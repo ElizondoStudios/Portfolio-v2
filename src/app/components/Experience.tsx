@@ -3,39 +3,18 @@ import { Calendar, MapPin } from 'lucide-react';
 export function Experience() {
   const experiences = [
     {
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Innovations Inc.',
-      location: 'San Francisco, CA',
-      period: '2022 - Present',
-      description: 'Leading development of cloud-native applications using React, Node.js, and AWS. Mentoring junior developers and architecting scalable solutions.',
+      title: 'Full Stack Web Developer',
+      company: 'Maindsoft',
+      location: 'Aguascalientes, MX.',
+      period: '2023 - Present',
+      description: 'Maindsoft is a Mexico-based software development company focused on building custom digital solutions, including enterprise systems, web and mobile applications.',
       achievements: [
-        'Reduced application load time by 45% through optimization',
-        'Led a team of 5 developers on a major product launch',
-        'Implemented CI/CD pipeline reducing deployment time by 60%'
-      ]
-    },
-    {
-      title: 'Full Stack Developer',
-      company: 'Digital Solutions Ltd.',
-      location: 'New York, NY',
-      period: '2020 - 2022',
-      description: 'Developed and maintained multiple web applications using modern JavaScript frameworks and RESTful APIs.',
-      achievements: [
-        'Built 3 production-ready applications from scratch',
-        'Improved code quality through comprehensive testing',
-        'Collaborated with UX team to enhance user experience'
-      ]
-    },
-    {
-      title: 'Junior Web Developer',
-      company: 'StartUp Ventures',
-      location: 'Austin, TX',
-      period: '2018 - 2020',
-      description: 'Contributed to front-end development and learned full-stack technologies in a fast-paced startup environment.',
-      achievements: [
-        'Developed responsive UI components using React',
-        'Integrated third-party APIs and payment systems',
-        'Participated in agile development processes'
+        'Developed and maintained enterprise web applications using Angular , following scalable and modular architecture patterns.',
+        'Implemented mobile features using React Native , ensuring cross-platform compatibility and improved user experience.',
+        'Collaborated with backend teams to integrate .NET APIs and SQL Server databases into frontend applications.',
+        'Optimized UI performance and responsiveness, reducing load times and improving usability in high-traffic systems.',
+        'Participated in requirements analysis and technical design for banking and enterprise-level software solutions.',
+        'Worked closely with multidisciplinary teams to deliver features aligned with business needs and deadlines.'
       ]
     }
   ];
@@ -48,7 +27,7 @@ export function Experience() {
             Professional Experience
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            My journey through different roles and companies, building impactful solutions
+            My journey building impactful solutions
           </p>
         </div>
 

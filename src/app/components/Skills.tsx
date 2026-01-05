@@ -24,6 +24,12 @@ export function Skills() {
     'Learning Disposition',
   ];
 
+  const languages = [
+    { name: "English", level: "C1 TOEFL Certified"},
+    { name: "Spanish", level: "Native"},
+    { name: "French", level: "Basic"},
+  ]
+
   return (
     <section id="skills" className="min-h-screen flex items-center justify-center px-6 py-20">
       <div className="max-w-6xl w-full">
@@ -54,7 +60,7 @@ export function Skills() {
             ))}
           </div>
         </div>
-        <div className="w-full space-y-6 my-10">
+        <div className="w-full space-y-6 mt-10">
           <h3 className="text-purple-400 mb-6">Soft Skills</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {softSkills.map((skill) => (
@@ -63,6 +69,20 @@ export function Skills() {
                   className="px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-300 hover:border-purple-500/30 transition-all text-center"
                 >
                   {skill}
+                </div>
+              ))}
+            </div>
+        </div>
+        <div className="w-full space-y-6 mt-10">
+          <h3 className="text-blue-400 mb-6">Languages</h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+              {languages.map((language) => (
+                <div 
+                  key={language.name}
+                  className="px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-300 hover:border-purple-500/30 transition-all text-center flex flex-col"
+                >
+                  <span>{language.name}</span>
+                  <span className="text-muted-foreground text-sm">{language.level}</span>
                 </div>
               ))}
             </div>
