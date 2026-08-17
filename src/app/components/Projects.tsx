@@ -1,4 +1,4 @@
-import { ExternalLink, Code2 } from 'lucide-react';
+import { ExternalLink, Code2, Image as ImageIcon } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export function Projects() {
@@ -9,31 +9,36 @@ export function Projects() {
       title: t('projects.pardos.title'),
       description: t('projects.pardos.desc'),
       link: 'https://pardos-inc.com',
-      tech: ['React']
+      tech: ['React'],
+      image: '/projects/pardos-inc.com_.png'
     },
     {
       title: t('projects.healthpro.title'),
       description: t('projects.healthpro.desc'),
       link: 'https://healthproags.com',
-      tech: ['React']
+      tech: ['React'],
+      image: '/projects/healthproags.com_.png'
     },
     {
       title: t('projects.cinemas.title'),
       description: t('projects.cinemas.desc'),
       link: 'https://ckweb.maindsoft.net',
-      tech: ['Angular', '.NET', 'SQL Server']
+      tech: ['Angular', '.NET', 'SQL Server'],
+      image: '/projects/ckweb.maindsoft.net_.png'
     },
     {
       title: t('projects.granjenito.title'),
       description: t('projects.granjenito.desc'),
       link: 'https://granjenito.com',
-      tech: ['Angular', '.NET', 'SQL Server']
+      tech: ['Angular', '.NET', 'SQL Server'],
+      image: '/projects/granjenito.com_.png'
     },
     {
       title: t('projects.logia.title'),
       description: t('projects.logia.desc'),
       link: 'https://granlogiaags.com/',
-      tech: ['React', 'PHP', 'MySQL']
+      tech: ['React', 'PHP', 'MySQL'],
+      image: '/projects/granlogiaags.com_.png'
     }
   ];
 
@@ -53,16 +58,32 @@ export function Projects() {
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="relative p-6 bg-gray-800/30 border border-gray-700 rounded-xl hover:border-blue-500/30 transition-all duration-300 group flex flex-col h-full"
+              onClick={() => window.open(project.link, '_blank', 'noopener,noreferrer')}
+              className="cursor-pointer relative p-6 bg-gray-800/30 border border-gray-700 rounded-xl hover:border-blue-500/30 transition-all duration-300 group flex flex-col h-full"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
               
               <div className="relative flex flex-col h-full flex-grow">
-                <div className="flex items-center gap-3 mb-4">
+                {/* Project Image */}
+                <div className="w-full aspect-video rounded-lg bg-gray-800/80 border border-gray-700/50 mb-5 overflow-hidden relative group/image">
+                  {project.image ? (
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover/image:scale-105"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-gray-600">
+                      <ImageIcon className="w-12 h-12 opacity-50" />
+                    </div>
+                  )}
+                </div>
+
+                <div className="flex items-center gap-3 mb-3">
                   <div className="p-2 bg-blue-500/10 rounded-lg shrink-0">
-                    <Code2 className="w-6 h-6 text-blue-400" />
+                    <Code2 className="w-5 h-5 text-blue-400" />
                   </div>
-                  <h3 className="text-lg text-gray-200 font-medium">{project.title}</h3>
+                  <h3 className="text-lg text-gray-200 font-medium leading-tight">{project.title}</h3>
                 </div>
                 
                 <p className="text-gray-400 text-sm mb-6 flex-grow">{project.description}</p>
@@ -80,15 +101,10 @@ export function Projects() {
                   </div>
 
                   <div className="flex items-center justify-between border-t border-gray-700/50 pt-4">
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium"
-                    >
+                    <div className="flex items-center gap-2 text-purple-400 group-hover:text-purple-300 transition-colors text-sm font-medium">
                       <span>{t('projects.viewProject')}</span>
                       <ExternalLink className="w-4 h-4" />
-                    </a>
+                    </div>
                   </div>
                 </div>
               </div>
