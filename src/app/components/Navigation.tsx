@@ -14,6 +14,7 @@ export function Navigation() {
     { id: 'skills', label: t('nav.skills') },
     { id: 'experience', label: t('nav.experience') },
     { id: 'education', label: t('nav.education') },
+    { id: 'projects', label: t('nav.projects') },
     { id: 'contact', label: t('nav.contact') },
   ];
 

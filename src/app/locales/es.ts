@@ -4,6 +4,7 @@ export const es = {
   'nav.skills': 'Habilidades',
   'nav.experience': 'Experiencia',
   'nav.education': 'Educación',
+  'nav.projects': 'Proyectos',
   'nav.contact': 'Contacto',
   'nav.downloadCV': 'Descargar CV',
 
@@ -63,6 +64,21 @@ export const es = {
   'education.subtitle': 'Mi trayectoria académica y cualificaciones',
   'edu.uaa.degree': "Ingeniería en Computación Inteligente",
   'edu.ual.degree': 'Ingeniería en Computación (Intercambio Académico)',
+
+  // Projects
+  'projects.title': 'Proyectos',
+  'projects.subtitle': 'Algunos de mis trabajos recientes',
+  'projects.pardos.title': 'Pardos Inc',
+  'projects.pardos.desc': 'Página de aterrizaje para Pardos Inc.',
+  'projects.healthpro.title': 'HealthProAgs',
+  'projects.healthpro.desc': 'Página de aterrizaje para HealthProAgs.',
+  'projects.cinemas.title': 'Cinemas Kristal',
+  'projects.cinemas.desc': 'Portal web para consultar cartelera y comprar boletos.',
+  'projects.granjenito.title': 'Granjenito',
+  'projects.granjenito.desc': 'E-commerce de venta de alimentos.',
+  'projects.logia.title': 'Gran Logia de Aguascalientes',
+  'projects.logia.desc': 'Plataforma de difusión de contenido educativo y cultural.',
+  'projects.viewProject': 'Ver Proyecto',
 
   // Contact
   'contact.title': 'Ponte en Contacto',
