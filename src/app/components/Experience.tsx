@@ -3,18 +3,31 @@ import { Calendar, MapPin } from 'lucide-react';
 export function Experience() {
   const experiences = [
     {
-      title: 'Full Stack Web Developer',
+      title: 'Co-Founder & Team Lead (Part-Time)',
+      company: 'Pardos Inc',
+      location: 'Aguascalientes, MX',
+      period: 'Jan 2026 - Present',
+      link: 'https://pardos-inc.com',
+      description: 'Pardos Inc is a software development agency specializing in intelligent systems and custom web/mobile solutions.',
+      achievements: [
+        'Steered technical direction and custom software development, architecting database models and managing production deployments leveraging Agile methodologies.',
+        'Deployed a comprehensive ERP for clinical laboratories, automating operations for 3 facilities, resulting in a 60% reduction in operation time.',
+        'Integrated AI agents and MCP servers to provide intelligent capabilities to CRMs, dashboards, and mobile applications, increasing response time by 80%.'
+      ]
+    },
+    {
+      title: 'Fullstack Web Developer (Full-Time)',
       company: 'Maindsoft',
       location: 'Aguascalientes, MX.',
-      period: '2023 - Present',
+      period: 'June 2023 - Present',
+      link: 'https://maindsoft.net/',
       description: 'Maindsoft is a Mexico-based software development company focused on building custom digital solutions, including enterprise systems, web and mobile applications.',
       achievements: [
-        'Developed and maintained enterprise web applications using Angular , following scalable and modular architecture patterns.',
-        'Implemented mobile features using React Native , ensuring cross-platform compatibility and improved user experience.',
-        'Collaborated with backend teams to integrate .NET APIs and SQL Server databases into frontend applications.',
-        'Optimized UI performance and responsiveness, reducing load times and improving usability in high-traffic systems.',
-        'Participated in requirements analysis and technical design for banking and enterprise-level software solutions.',
-        'Worked closely with multidisciplinary teams to deliver features aligned with business needs and deadlines.'
+        'Engineered scalable, high-concurrency enterprise web applications with Angular and React.',
+        'Integrated RESTful C#/.NET APIs within a microservices architecture, leveraging Role-Based Access Control (RBAC) validation and SQL databases to secure data for 200+ concurrent users.',
+        'Optimized internal processes and CI/CD pipelines using Git, Claude Code, and Replit, reducing testing and deployment time by 40%.',
+        'Delivered cross-platform mobile features using React Native, improving user engagement by 24%.',
+        'Directed requirements analysis and technical design for corporate and banking sector solutions.'
       ]
     }
   ];
@@ -43,7 +56,13 @@ export function Experience() {
                 <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
                   <div>
                     <h3 className="text-blue-400 mb-2">{exp.title}</h3>
-                    <p className="text-gray-300">{exp.company}</p>
+                    {exp.link ? (
+                      <a href={exp.link} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">
+                        {exp.company}
+                      </a>
+                    ) : (
+                      <p className="text-gray-300">{exp.company}</p>
+                    )}
                   </div>
                   <div className="flex flex-col items-start md:items-end gap-2 mt-2 md:mt-0">
                     <div className="flex items-center gap-2 text-gray-400 text-sm">
