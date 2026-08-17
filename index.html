@@ -1,7 +1,17 @@
 
   <!DOCTYPE html>
-  <html lang="en">
+  <html id="html-root">
     <head>
+      <script>
+        (function() {
+          var savedLanguage = localStorage.getItem('language');
+          if (savedLanguage === 'en' || savedLanguage === 'es') {
+            document.documentElement.lang = savedLanguage;
+          } else {
+            document.documentElement.lang = navigator.language.toLowerCase().startsWith('es') ? 'es' : 'en';
+          }
+        })();
+      </script>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
