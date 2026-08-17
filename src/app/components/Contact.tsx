@@ -2,8 +2,10 @@ import { Mail, MapPin, Send, Linkedin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 export function Contact() {
+  const { executeRecaptcha } = useGoogleReCaptcha();
   // EmailJS initialization
   useEffect(() => {
     emailjs.init("YgezbUoP_Om7PvM9u");
@@ -22,31 +24,49 @@ export function Contact() {
     });
   };
 
-  const onSubmitEmailForm = (e: React.FormEvent) => {
+  const onSubmitEmailForm = async (e: React.FormEvent) => {
     e.preventDefault();
-    emailjs.send("service_nt7ix0d","template_2g48fsf",{
-      title: `New message from ${emailForm.name}`,
-      name: emailForm.name,
-      time: new Date().toLocaleString(),
-      message: emailForm.message,
-      email: emailForm.email,
-    })
-    .then(() => {
-      toast.success('Message Sent!', {
-        description: 'Your message has been sent successfully. I will get back to you soon.',
+
+    if (!executeRecaptcha) {
+      toast.error('ReCaptcha not ready', {
+        description: 'Please try again in a moment.',
       });
-      setEmailForm({
-        name: '',
-        email: '',
-        message: '',
+      return;
+    }
+
+    try {
+      const token = await executeRecaptcha('contact_form');
+      
+      emailjs.send("service_nt7ix0d","template_2g48fsf",{
+        title: `New message from ${emailForm.name}`,
+        name: emailForm.name,
+        time: new Date().toLocaleString(),
+        message: emailForm.message,
+        email: emailForm.email,
+        'g-recaptcha-response': token,
+      })
+      .then(() => {
+        toast.success('Message Sent!', {
+          description: 'Your message has been sent successfully. I will get back to you soon.',
+        });
+        setEmailForm({
+          name: '',
+          email: '',
+          message: '',
+        });
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+        toast.error('Error sending message', {
+          description: 'There was a problem sending your message. Please try again.',
+        });
       });
-    })
-    .catch((error) => {
-      console.error('Error sending email:', error);
-      toast.error('Error sending message', {
-        description: 'There was a problem sending your message. Please try again.',
+    } catch (error) {
+      console.error('Error executing ReCaptcha:', error);
+      toast.error('Verification failed', {
+        description: 'ReCaptcha verification failed. Please try again.',
       });
-    });
+    }
   }
 
   return (
