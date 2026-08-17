@@ -1,33 +1,36 @@
 import { Calendar, MapPin } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export function Experience() {
+  const { t } = useLanguage();
+
   const experiences = [
     {
-      title: 'Co-Founder & Team Lead (Part-Time)',
+      title: t('exp.pardos.title'),
       company: 'Pardos Inc',
       location: 'Aguascalientes, MX',
-      period: 'Jan 2026 - Present',
+      period: `Jan 2026 - ${t('experience.present')}`,
       link: 'https://pardos-inc.com',
-      description: 'Pardos Inc is a software development agency specializing in intelligent systems and custom web/mobile solutions.',
+      description: t('exp.pardos.desc'),
       achievements: [
-        'Steered technical direction and custom software development, architecting database models and managing production deployments leveraging Agile methodologies.',
-        'Deployed a comprehensive ERP for clinical laboratories, automating operations for 3 facilities, resulting in a 60% reduction in operation time.',
-        'Integrated AI agents and MCP servers to provide intelligent capabilities to CRMs, dashboards, and mobile applications, increasing response time by 80%.'
+        t('exp.pardos.ach1'),
+        t('exp.pardos.ach2'),
+        t('exp.pardos.ach3')
       ]
     },
     {
-      title: 'Fullstack Web Developer (Full-Time)',
+      title: t('exp.maindsoft.title'),
       company: 'Maindsoft',
       location: 'Aguascalientes, MX.',
-      period: 'June 2023 - Present',
+      period: `June 2023 - ${t('experience.present')}`,
       link: 'https://maindsoft.net/',
-      description: 'Maindsoft is a Mexico-based software development company focused on building custom digital solutions, including enterprise systems, web and mobile applications.',
+      description: t('exp.maindsoft.desc'),
       achievements: [
-        'Engineered scalable, high-concurrency enterprise web applications with Angular and React.',
-        'Integrated RESTful C#/.NET APIs within a microservices architecture, leveraging Role-Based Access Control (RBAC) validation and SQL databases to secure data for 200+ concurrent users.',
-        'Optimized internal processes and CI/CD pipelines using Git, Claude Code, and Replit, reducing testing and deployment time by 40%.',
-        'Delivered cross-platform mobile features using React Native, improving user engagement by 24%.',
-        'Directed requirements analysis and technical design for corporate and banking sector solutions.'
+        t('exp.maindsoft.ach1'),
+        t('exp.maindsoft.ach2'),
+        t('exp.maindsoft.ach3'),
+        t('exp.maindsoft.ach4'),
+        t('exp.maindsoft.ach5')
       ]
     }
   ];
@@ -37,10 +40,10 @@ export function Experience() {
       <div className="max-w-5xl w-full">
         <div className="text-center mb-16">
           <h2 className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-            Professional Experience
+            {t('experience.title')}
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            My journey building impactful solutions
+            {t('experience.subtitle')}
           </p>
         </div>
 
@@ -79,7 +82,7 @@ export function Experience() {
                 <p className="text-gray-400 mb-4">{exp.description}</p>
 
                 <div className="space-y-2">
-                  <p className="text-purple-400 text-sm">Key Achievements:</p>
+                  <p className="text-purple-400 text-sm">{t('experience.keyAchievements')}</p>
                   <ul className="space-y-1">
                     {exp.achievements.map((achievement, i) => (
                       <li key={i} className="text-gray-400 text-sm flex items-start gap-2">

@@ -1,44 +1,48 @@
+import { useLanguage } from '../context/LanguageContext';
+
 export function Skills() {
+  const { t } = useLanguage();
+
   const skillCategories = [
     {
-      title: "Frontend & Mobile",
+      title: t('skills.frontend'),
       skills: ["React", "React Native", "Angular", "HTML/CSS/Javascript", "Typescript", "UI/UX Design", "Figma"],
       color: "blue"
     },
     {
-      title: "Backend & APIs",
+      title: t('skills.backend'),
       skills: ["Node.js", "Express.js", ".NET (C#)", "RESTful APIs", "Microservices", "Python"],
       color: "purple"
     },
     {
-      title: "Databases",
+      title: t('skills.databases'),
       skills: ["Postgres", "SQL Server", "MySQL", "SQLite", "MongoDB"],
       color: "blue"
     },
     {
-      title: "DevOps, Tools & AI",
+      title: t('skills.devops'),
       skills: ["AWS", "Docker", "AI Engineering", "Git", "CI/CD", "Agile", "GitHub Copilot", "Claude Code"],
       color: "purple"
     }
   ];
 
   const certificationsAndLanguages = [
-    { name: "TOEFL ITP C1 (647 Scaled Score)", type: "Certification" },
-    { name: "Spanish", type: "Native" },
-    { name: "English", type: "Fluent" },
-    { name: "French", type: "Beginner" },
+    { name: t('skills.cert.toefl'), type: t('skills.type.cert') },
+    { name: t('skills.cert.spanish'), type: t('skills.type.native') },
+    { name: t('skills.cert.english'), type: t('skills.type.fluent') },
+    { name: t('skills.cert.french'), type: t('skills.type.beginner') },
   ];
 
   const softSkills = [
-    'Problem Solving',
-    'Team Collaboration',
-    'Communication',
-    'Time Management',
-    'Adaptability',
-    'Assertiveness',
-    'Leadership',
-    'Responsibility',
-    'Learning Disposition',
+    t('skills.soft.problemSolving'),
+    t('skills.soft.teamCollab'),
+    t('skills.soft.communication'),
+    t('skills.soft.timeMgmt'),
+    t('skills.soft.adaptability'),
+    t('skills.soft.assertiveness'),
+    t('skills.soft.leadership'),
+    t('skills.soft.responsibility'),
+    t('skills.soft.learningDisp'),
   ];
 
   return (
@@ -46,10 +50,10 @@ export function Skills() {
       <div className="max-w-6xl w-full">
         <div className="text-center mb-16">
           <h2 className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-            Skills & Expertise
+            {t('skills.title')}
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            A comprehensive overview of my technical abilities and interpersonal strengths
+            {t('skills.subtitle')}
           </p>
         </div>
         
@@ -72,7 +76,7 @@ export function Skills() {
         </div>
 
         <div className="w-full space-y-6 mt-16">
-          <h3 className="text-blue-400 text-lg font-medium border-b border-gray-700/50 pb-2">Soft Skills</h3>
+          <h3 className="text-blue-400 text-lg font-medium border-b border-gray-700/50 pb-2">{t('skills.softSkills')}</h3>
           <div className="flex flex-wrap gap-3">
             {softSkills.map((skill) => (
               <div 
@@ -86,7 +90,7 @@ export function Skills() {
         </div>
 
         <div className="w-full space-y-6 mt-12">
-          <h3 className="text-purple-400 text-lg font-medium border-b border-gray-700/50 pb-2">Certifications & Languages</h3>
+          <h3 className="text-purple-400 text-lg font-medium border-b border-gray-700/50 pb-2">{t('skills.certifications')}</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {certificationsAndLanguages.map((item) => (
               <div 

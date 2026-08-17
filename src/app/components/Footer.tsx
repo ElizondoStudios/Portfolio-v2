@@ -1,7 +1,9 @@
-import { Github, Linkedin, Mail, Code } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="border-t border-gray-800 bg-gray-900/50">
@@ -12,27 +14,32 @@ export function Footer() {
               José Luis Elizondo
             </h4>
             <p className="text-gray-400 text-sm">
-              Full Stack Developer passionate about creating innovative web solutions and delivering exceptional user experiences.
+              {t('footer.desc')}
             </p>
           </div>
 
           <div>
-            <h4 className="text-gray-300 mb-4">Quick Links</h4>
+            <h4 className="text-gray-300 mb-4">{t('footer.quickLinks')}</h4>
             <div className="space-y-2">
-              {['About', 'Skills', 'Experience', 'Contact'].map((link) => (
+              {[
+                { id: 'about', label: t('nav.about') },
+                { id: 'skills', label: t('nav.skills') },
+                { id: 'experience', label: t('nav.experience') },
+                { id: 'contact', label: t('nav.contact') }
+              ].map((link) => (
                 <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
+                  key={link.id}
+                  href={`#${link.id}`}
                   className="block text-gray-400 text-sm hover:text-blue-400 transition-colors"
                 >
-                  {link}
+                  {link.label}
                 </a>
               ))}
             </div>
           </div>
 
           <div>
-            <h4 className="text-gray-300 mb-4">Connect</h4>
+            <h4 className="text-gray-300 mb-4">{t('footer.connect')}</h4>
             <div className="flex gap-3">
               <a 
                 href="https://github.com/ElizondoStudios" 
@@ -65,7 +72,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-gray-800 text-center">
           <p className="text-gray-400 text-sm">
-            © {currentYear} José Luis Elizondo Figueroa. All rights reserved.
+            © {currentYear} José Luis Elizondo Figueroa. {t('footer.rights')}
           </p>
         </div>
       </div>

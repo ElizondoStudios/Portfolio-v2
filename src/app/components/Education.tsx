@@ -1,16 +1,19 @@
-import { Calendar, GraduationCap, Link as LinkIcon, Star } from 'lucide-react';
+import { Calendar, GraduationCap, Link as LinkIcon } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export function Education() {
+  const { t } = useLanguage();
+
   const education = [
     {
-      degree: "Bachelor's Degree in Intelligent Computing Engineering",
+      degree: t('edu.uaa.degree'),
       institution: 'Universidad Autónoma de Aguascalientes',
       period: 'August 2021 - June 2026',
       grade: '9.76/10',
       link: 'https://en.uaa.mx/portal/'
     },
     {
-      degree: 'Computer Science (Academic Exchange)',
+      degree: t('edu.ual.degree'),
       institution: 'Universidad de Almería',
       period: 'September 2024 - February 2025',
       grade: '9.5/10',
@@ -23,10 +26,10 @@ export function Education() {
       <div className="max-w-5xl w-full">
         <div className="text-center mb-16">
           <h2 className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
-            Education
+            {t('education.title')}
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            My academic journey and qualifications
+            {t('education.subtitle')}
           </p>
         </div>
 
