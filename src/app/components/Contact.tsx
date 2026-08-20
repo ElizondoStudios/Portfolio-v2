@@ -91,36 +91,36 @@ export function Contact() {
               <h3 className="text-blue-400 mb-6">{t('contact.info')}</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4 p-4 bg-gray-800/30 border border-gray-700 rounded-lg hover:border-blue-500/30 transition-all">
-                  <div className="p-3 bg-blue-500/10 rounded-lg">
+                  <div className="p-3 bg-blue-500/10 rounded-lg shrink-0">
                     <Mail className="w-5 h-5 text-blue-400" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-gray-400 text-sm">{t('contact.email')}</p>
-                    <a href="mailto:joseluis.elizondof11@outlook.com" className="text-gray-300 hover:text-blue-400 transition-colors">
+                    <a href="mailto:joseluis.elizondof11@outlook.com" className="text-gray-300 hover:text-blue-400 transition-colors break-all">
                       joseluis.elizondof11@outlook.com
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-gray-800/30 border border-gray-700 rounded-lg hover:border-purple-500/30 transition-all">
-                  <div className="p-3 bg-purple-500/10 rounded-lg">
+                  <div className="p-3 bg-purple-500/10 rounded-lg shrink-0">
                     <Linkedin className="w-5 h-5 text-purple-400" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-gray-400 text-sm">{t('contact.linkedin')}</p>
-                    <a href="https://linkedin.com/in/jos%C3%A9-luis-elizondo-figueroa-562398231" className="text-gray-300 hover:text-purple-400 transition-colors">
+                    <a href="https://linkedin.com/in/jos%C3%A9-luis-elizondo-figueroa-562398231" className="text-gray-300 hover:text-purple-400 transition-colors break-words">
                       José Luis Elizondo Figueroa
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-gray-800/30 border border-gray-700 rounded-lg hover:border-blue-500/30 transition-all">
-                  <div className="p-3 bg-blue-500/10 rounded-lg">
+                  <div className="p-3 bg-blue-500/10 rounded-lg shrink-0">
                     <MapPin className="w-5 h-5 text-blue-400" />
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-gray-400 text-sm">{t('contact.location')}</p>
-                    <p className="text-gray-300">Aguascalientes, MX.</p>
+                    <p className="text-gray-300 break-words">Aguascalientes, MX.</p>
                   </div>
                 </div>
               </div>
